@@ -8,7 +8,11 @@
     <title>Registration Page</title>
 </head>
 <body>
-    <h1>Hello Registrator</h1>
-
+    <h1>{{ REGIS }}</h1>
+    <form action="{% url 'registration' %}" method="post", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
 </body>
 </html>
